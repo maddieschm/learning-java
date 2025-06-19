@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Neuro-Friendly Bank</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Your Bank!</h1>
+        <p>A simple and clear way to manage your accounts.</p>
+        </header>
+
+    <div class="container"> <aside class="sidebar card"> <h2>Instructions</h2>
+            <p>
+                1. Enter your name and address to get started.
+                <br>2. Your checking and savings accounts will be created automatically.
+                <br>3. Use the Deposit section to add funds to your accounts.
+                <br>4. Use the Withdraw section to take out funds. Watch for messages regarding your balance!
+                <br>5. "Fast Withdraw" instantly takes out a preset amount (default $60).
+                <br>6. Look for messages at the bottom of the page confirming your transactions or alerting you to issues.
+            </p>
+        </aside>
+
+        <main>
+            <section class="user-setup card">
+                <h2>Your Information</h2>
+                <div class="input-group">
+                    <label for="userName">Name:</label>
+                    <input type="text" id="userName" placeholder="Enter your name">
+                </div>
+                <div class="input-group">
+                    <label for="userAddress">Address:</label>
+                    <input type="text" id="userAddress" placeholder="Enter your address">
+                </div>
+                <button id="createAccountBtn">Create Accounts</button>
+            </section>
+
+            <section class="account-display card" style="display: none;">
+                <h2>Account Summary</h2>
+                <p><strong>Customer:</strong> <span id="displayCustomerName"></span> from <span id="displayCustomerAddress"></span></p>
+                <p><strong>Checking Account:</strong> <span id="displayCheckingBalance">0.00</span></p>
+                <p><strong>Savings Account:</strong> <span id="displaySavingsBalance">0.00</span></p>
+            </section>
+
+            <section class="transactions card" style="display: none;">
+                <h2>Transactions</h2>
+
+                <div class="transaction-section">
+                    <h3>Deposit</h3>
+                    <div class="input-group">
+                        <label for="depositAmount">Amount:</label>
+                        <input type="number" id="depositAmount" placeholder="Enter amount" min="0" step="0.01">
+                    </div>
+                    <button id="depositCheckingBtn">Deposit to Checking</button>
+                    <button id="depositSavingsBtn">Deposit to Savings</button>
+                </div>
+
+                <div class="transaction-section">
+                    <h3>Withdraw</h3>
+                    <div class="input-group">
+                        <label for="withdrawAmount">Amount:</label>
+                        <input type="number" id="withdrawAmount" placeholder="Enter amount" min="0" step="0.01">
+                    </div>
+                    <button id="withdrawCheckingBtn">Withdraw from Checking</button>
+                    <button id="withdrawSavingsBtn">Withdraw from Savings</button>
+                    <button id="fastWithdrawCheckingBtn">Fast Withdraw Checking ($60)</button>
+                    <button id="fastWithdrawSavingsBtn">Fast Withdraw Savings ($60)</button>
+                </div>
+            </section>
+
+            <section class="messages card" style="display: none;">
+                <h2>Messages</h2>
+                <p id="messageDisplay" class="feedback-message"></p>
+            </section>
+        </main>
+    </div> <script src="script.js"></script>
+</body>
+</html>
