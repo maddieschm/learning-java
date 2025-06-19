@@ -49,7 +49,7 @@ public class BankAccount {
 	 * @param amount to add to balance
 	 */
 	public void deposit(double amount) {
-		if (amount) > 0 {
+		if (amount > 0) {
 		this.balance += amount; 
 	}
 	
@@ -78,6 +78,7 @@ public class BankAccount {
 	public void setFastCashamount (double amount) {
 		if (amount > 0) {
 		this.fastCashAmount = amount; 
+		}
 	}
 	
 	/**
